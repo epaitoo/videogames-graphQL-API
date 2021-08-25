@@ -1,0 +1,19 @@
+type VideoGame {
+    id: ID!
+    title: String!
+    genre: String!
+    platform: [String]
+    releaseDate: Int
+    developer: Developer
+}
+
+extend type Query {
+    findAllVideoGames: [VideoGame]!
+
+}
+
+extend type Mutation {
+    newVideoGame(title: String!, genre: String!, platform: [String], releaseDate: Int, developer: ID!): VideoGame!
+    deleteVideoGame(id: ID!): Boolean!
+    updateVideoGameTitle(title: String, id: ID!): VideoGame!
+}

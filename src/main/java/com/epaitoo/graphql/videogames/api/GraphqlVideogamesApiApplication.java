@@ -1,13 +1,13 @@
-package com.epaitoo.videogamesapigraphql;
+package com.epaitoo.graphql.videogames.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class VideogamesapiGraphqlApplication {
+public class GraphqlVideogamesApiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(VideogamesapiGraphqlApplication.class, args);
+		SpringApplication.run(GraphqlVideogamesApiApplication.class, args);
 	}
 
 }
