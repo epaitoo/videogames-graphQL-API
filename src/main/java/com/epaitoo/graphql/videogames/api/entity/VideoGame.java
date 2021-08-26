@@ -18,10 +18,14 @@ public class VideoGame {
     @JoinColumn(name = "developer_id", nullable = false, updatable = false)
     private Developer developer;
 
-    public VideoGame(String title, List<String> platform, String genre, Integer releaseYear, Developer developer) {
+    public VideoGame() {
+
+    }
+
+    public VideoGame(String title,  String genre, List<String> platform, Integer releaseYear, Developer developer) {
         this.title = title;
-        this.platform = platform;
         this.genre = genre;
+        this.platform = platform;
         this.releaseYear = releaseYear;
         this.developer = developer;
     }

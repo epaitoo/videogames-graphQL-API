@@ -13,6 +13,14 @@ public class Developer {
     private String name;
     private String country;
 
+    public Developer() {
+
+    }
+
+    public Developer(Long id) {
+        this.id = id;
+    }
+
     public Developer(String name, String country) {
         this.name = name;
         this.country = country;
