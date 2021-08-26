@@ -5,7 +5,9 @@ import com.epaitoo.graphql.videogames.api.entity.Developer;
 import com.epaitoo.graphql.videogames.api.entity.VideoGame;
 import com.epaitoo.graphql.videogames.api.repository.DeveloperRespository;
 import com.epaitoo.graphql.videogames.api.repository.VideoGameRepository;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Query implements GraphQLQueryResolver {
     private VideoGameRepository videoGameRepository;
     private DeveloperRespository developerRespository;

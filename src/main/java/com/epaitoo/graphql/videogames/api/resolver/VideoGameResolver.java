@@ -4,9 +4,11 @@ import com.coxautodev.graphql.tools.GraphQLResolver;
 import com.epaitoo.graphql.videogames.api.entity.Developer;
 import com.epaitoo.graphql.videogames.api.entity.VideoGame;
 import com.epaitoo.graphql.videogames.api.repository.DeveloperRespository;
+import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
+@Component
 public class VideoGameResolver implements GraphQLResolver<VideoGame> {
     private DeveloperRespository developerRespository;
 

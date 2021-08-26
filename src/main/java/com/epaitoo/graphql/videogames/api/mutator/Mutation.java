@@ -1,4 +1,4 @@
-package com.epaitoo.graphql.videogames.api.mutation;
+package com.epaitoo.graphql.videogames.api.mutator;
 
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.epaitoo.graphql.videogames.api.entity.Developer;
@@ -6,10 +6,12 @@ import com.epaitoo.graphql.videogames.api.entity.VideoGame;
 import com.epaitoo.graphql.videogames.api.exception.VideoGameNotFoundException;
 import com.epaitoo.graphql.videogames.api.repository.DeveloperRespository;
 import com.epaitoo.graphql.videogames.api.repository.VideoGameRepository;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 
+@Component
 public class Mutation implements GraphQLMutationResolver {
     private DeveloperRespository developerRespository;
     private VideoGameRepository videoGameRepository;
@@ -25,9 +27,9 @@ public class Mutation implements GraphQLMutationResolver {
         return developer;
     }
 
-    public VideoGame newVideoGame(String title, String genre, List<String> platform, int releaseDate, Long developerId){
+    public VideoGame newVideoGame(String title, String genre, List<String> platform, int releaseYear, Long developerId){
         Developer developer = new Developer(developerId);
-        VideoGame videoGame = new VideoGame(title, genre, platform, releaseDate, developer);
+        VideoGame videoGame = new VideoGame(title, genre, platform, releaseYear, developer);
         videoGameRepository.save(videoGame);
         return videoGame;
     }

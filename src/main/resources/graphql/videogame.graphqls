@@ -3,7 +3,7 @@ type VideoGame {
     title: String!
     genre: String!
     platform: [String]
-    releaseDate: Int
+    releaseYear: Int
     developer: Developer
 }
 
@@ -13,7 +13,7 @@ extend type Query {
 }
 
 extend type Mutation {
-    newVideoGame(title: String!, genre: String!, platform: [String], releaseDate: Int, developerId: ID!): VideoGame!
+    newVideoGame(title: String!, genre: String!, platform: [String], releaseYear: Int, developerId: ID!): VideoGame!
     deleteVideoGame(id: ID!): Boolean!
     updateVideoGameTitle(title: String, id: ID!): VideoGame!
 }

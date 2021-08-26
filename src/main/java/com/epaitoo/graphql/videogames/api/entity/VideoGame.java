@@ -10,7 +10,11 @@ public class VideoGame {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String title;
+
+    @Column
+    @ElementCollection(targetClass = String.class, fetch = FetchType.EAGER)
     private List<String> platform;
+
     private String genre;
     private Integer releaseYear;
 
